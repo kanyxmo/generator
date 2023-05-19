@@ -1,0 +1,91 @@
+{
+    "name": "mine/devtool",
+    "description": "A Devtool for littler.",
+    "type": "library",
+    "license": "MPL-2.0",
+    "keywords": [
+        "php",
+        "swoole",
+        "hyperf",
+        "littler"
+    ],
+    "homepage": "https://github.com/littlezo/littler",
+    "support": {
+        "docs": "https://github.com/littlezo/littler/wiki",
+        "issues": "https://github.com/littlezo/littler/issues",
+        "pull-request": "https://github.com/littlezo/littler/pulls",
+        "source": "https://github.com/littlezo/littler"
+    },
+    "authors": [
+        {
+            "name": "littlezov",
+            "email": "littlezov@qq.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1||^8.2",
+        "hyperf/command": "~3.0",
+        "hyperf/contract": "~3.0",
+        "hyperf/database": "~3.0",
+        "hyperf/di": "~3.0",
+        "hyperf/event": "~3.0",
+        "hyperf/framework": "~3.0",
+        "doctrine/inflector": "^2.0",
+        "hyperf/code-parser": "~3.0",
+        "hyperf/codec": "~3.0",
+        "hyperf/collection": "~3.0",
+        "hyperf/context": "~3.0",
+        "hyperf/coordinator": "~3.0",
+        "hyperf/coroutine": "~3.0",
+        "hyperf/engine": "^1.2|^2.0",
+        "hyperf/macroable": "~3.0",
+        "hyperf/serializer": "~3.0",
+        "hyperf/stringable": "~3.0",
+        "hyperf/support": "~3.0",
+        "nikic/php-parser": "~4.0|^5.0"
+    },
+    "require-dev": {
+        "ext-swoole": "~5.0",
+        "hyperf/ide-helper": "~3.0",
+        "phpstan/phpstan": "1.8.*",
+        "swoole/ide-helper": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mine\\Devtool\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "suggest": {
+        "symfony/var-dumper": "Required to use the dd function (^5.0|^6.0).",
+        "symfony/serializer": "Required to use SymfonyNormalizer (^5.0|^6.0)",
+        "symfony/property-access": "Required to use SymfonyNormalizer (^5.0|^6.0)",
+        "hyperf/di": "Required to use ExceptionNormalizer",
+        "nikic/php-parser": "Required to use PhpParser. (^4.0)",
+        "ramsey/uuid": "Required to use uuid and orderedUuid methods",
+        "symfony/uid": "Required to use ulid method"
+    },
+    "scripts": {
+        "fixer": "php-cs-fixer fix $1",
+        "analyse": "phpstan analyse --memory-limit 300M -l 0 -c phpstan.neon ./src"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        },
+        "hyperf": {
+            "config": "Mine\\Devtool\\ConfigProvider"
+        }
+    },
+    "minimum-stability":"dev",
+    "prefer-stable": true,
+    "repositories": {
+        "littler": {
+            "type": "path",
+            "url": "../../../littler/src/*"
+        }
+    }
+}
